@@ -3,7 +3,7 @@
  * Executable name : sort 
  * Version         : 1.0
  * Created date    : 01/19/2017
- * Author          : I-Ting Angelina Lee and <Your name>
+ * Author          : I-Ting Angelina Lee and Richard Wu
  * Description     : A program that, given an input <n>, 
  *                   generate an array of length n with random values
  *                   and sort the values using bubble sort 
@@ -58,8 +58,15 @@ static void generate_input(int *array, int n) {
  * in increasing order.
  **/
 static void sort_input(int *array,  int n) {
-    
-    // It's your job to implement this simple bubble sort routine
+    for(int i = 0;i < n-1;i++){
+	for(int j = 0;j < n-1-i;j++){
+	     if(array[j] > array[j+1]){
+	    	array[j+1] = array[j+1]^array[j];
+		array[j] = array[j+1]^array[j];
+		array[j+1] = array[j+1]^array[j];
+	     }
+	}
+    }    
 }
 
 /**
